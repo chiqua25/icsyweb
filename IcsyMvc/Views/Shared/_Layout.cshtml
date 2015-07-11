@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ICSY</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <div class="header-logo">
+                <a href="#index" title="ICSY" rel="home"><img src="~/images/icsynewlogo.png" alt="Science picture"></a>
+                <p class="title">
+                    Building a stronger America from within.
+                </p>
+            </div>
+            @*<div id="participate">
+                    <aside class="home_widget">
+                        <ul class="buttons">
+                            <li>
+                                <a href="Members" target="_blank">
+                                    <section class="signup">
+                                        <h3><i class="fa fa-rocket"></i> Get Involved</h3>
+                                    </section>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Contact" target="_blank">
+                                    <section class="contact">
+                                        <h3><i class="fa fa-paper-plane"></i> Contact Us</h3>
+                                    </section>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>*@
+        </div>
+        <!-- container ends here -->
+    </div>
+    <div class="container">
+        <!-- navigation bar -->
+        <nav role="navigation" class="navbar navbar-inverse">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a href="#" class="navbar-brand">ICSY</a>*@
+            </div>
+            <!-- Collection of nav links, forms, and other content for toggling -->
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Who We Are", "About", "Home")</li>
+                    <li>@Html.ActionLink("Programs and Partnerships", "Partner", "Home")</li>
+                    <li>@Html.ActionLink("Membership", "Member", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <menulink controller-name="Home" action-name="Index" menu-text="Home"></menulink>
+                    <menulink controller-name="Home" action-name="About" menu-text="Who We Are"></menulink>
+                    <menulink controller-name="Home" action-name="Partner" menu-text="Programs and Partnerships"></menulink>
+                    <menulink controller-name="Home" action-name="Member" menu-text="Membership"></menulink>
+                    <menulink controller-name="Home" action-name="Contact" menu-text="Contact"></menulink>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://www.facebook.com/innercityscienceforyouth"><i class="fa fa-facebook-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                            &copy; @DateTime.Now.Year - Inner City Science for Youth
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-right footer-right">
+                        <p>Created by JOUP Creative</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
