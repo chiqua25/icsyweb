@@ -24,7 +24,7 @@ namespace IcsyMvc.Models
         //membership form fields
         [Required, Display(Name = "Programs of Interest")]
         public ScienceActivityEnum Programs { get; set; }
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
         //verification field
         [Required, Display(Name = "Enter two digit number with no space")]

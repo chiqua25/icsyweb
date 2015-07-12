@@ -1,6 +1,8 @@
-﻿using IcsyMvc.Models;
+﻿using IcsyMvc.Common;
+using IcsyMvc.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,7 +22,6 @@ namespace IcsyMvc.Controllers
 
             return View();
         }
-        
         public ActionResult Contact()
         {
             ContactFormModel vm = new ContactFormModel();
@@ -29,9 +30,28 @@ namespace IcsyMvc.Controllers
         [HttpPost]
         public ActionResult Contact(ContactFormModel cfm)
         {
-            if(ModelState.IsValid)
+            try
             {
+                if (this.ModelState.IsValid)
+                {
+                    ContactEmail email = new ContactEmail()
+                    {
+                        FirstName = cfm.FromFirstName,
+                        LastName = cfm.FromLastName,
+                        EmailFrom = cfm.FromEmail,
+                        EmailTo = ConfigurationManager.AppSettings["EmailTo"],
+                        SmtpFrom = ConfigurationManager.AppSettings["SmtpFrom"],
+                        Subject = cfm.Subject,
+                        Message = cfm.Message
+                    };
+                    email.Send();
 
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (RulesException ex)
+            {
+                this.ModelState.AddRuleErrors(ex);
             }
             return View(cfm);
         }

@@ -1,0 +1,18 @@
+﻿@using IcsyMvc.Models;
+@model ContactEmail
+To: @Model.EmailTo
+From: @Model.EmailFrom
+Subject: ICSY new message from @Model.FirstName @Model.LastName
+
+Dear ICSY Administrator,
+
+Below are the details of the new message.
+
+Name: @Model.FirstName @Model.LastName
+Email: @Model.EmailFrom
+Subject: @Model.Subject
+Message: @Model.Message
+
+Sincerely, 
+
+ICSYWeb Administrator 
