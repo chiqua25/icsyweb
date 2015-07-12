@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IcsyMvc.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,12 +20,20 @@ namespace IcsyMvc.Controllers
 
             return View();
         }
-
+        
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ContactFormModel vm = new ContactFormModel();
+            return View(vm);
+        }
+        [HttpPost]
+        public ActionResult Contact(ContactFormModel cfm)
+        {
+            if(ModelState.IsValid)
+            {
 
-            return View();
+            }
+            return View(cfm);
         }
         public ActionResult Partner()
         {
