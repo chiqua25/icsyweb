@@ -1,47 +1,75 @@
 ﻿@using IcsyMvc.Models;
 @model ContactFormModel
-
-@{
-    ViewBag.Title = "Contact";
+@{ 
+    ViewBag.Title = Model.Page;
 }
 
-<div class="jumbotron">
-    <h1>Get In Touch!</h1>
-    <p class="jumbotron-text">Thanks for stopping by. We hope you have enjoyed your visit. We'd love to hear from you. Please complete the handy dandy form below, and we will get back to you as soon as possible.</p>
-</div>
+@if(Model.Page == "Contact") {
+    <div class="jumbotron">
+        <h1>Get In Touch!</h1>
+        <p class="jumbotron-text">Thanks for stopping by. We hope you have enjoyed your visit. We'd love to hear from you. Please complete the handy dandy form below, and we will get back to you as soon as possible.</p>
+    </div>
+}
+else
+{
+    <div class="jumbotron">
+        <h1>The Value of ICSY Membership!</h1>
+        <p class="jumbotron-text">Your membership is an investment in a child's future, allowing them to develop in their knowledge of the scientific world around him or her. Join now by completing the handy form below, and we will contact you as soon as possible.</p>
+    </div>
+}
 
 <div class="row contact-row">
     <div class="col-md-6">
-        <div class="form-heading"><h2>Contact US</h2></div>
+        @if (Model.Page == "Contact") {
+            <div class="form-heading"><h2>Contact Us</h2></div>
+        }
+        else
+        {
+            <div class="form-heading"><h2>Join Now!</h2></div>
+        }
         <form class="contact-form" action='@Url.Action("Contact", "Home")' method="post">
             @Html.ValidationSummary(false)
-            <div class="form-group">
+            <div class="left-control form-group col-md-6">
                 @Html.LabelFor(x => x.FromFirstName, new { @class="sr-only" })
-                @Html.TextBoxFor(x => x.FromFirstName, new { @class="form-control", @placeholder="First Name" })
+                @Html.TextBoxFor(x => x.FromFirstName, new { @class="form-control", @placeholder="First Name", @title="Please provide your first name." })
             </div>
-            <div class="form-group">
+            <div class="right-control form-group col-md-6">
                 @Html.LabelFor(x => x.FromLastName, new { @class = "sr-only" })
-                @Html.TextBoxFor(x => x.FromLastName, new { @class = "form-control", @placeholder = "Last Name" })
+                @Html.TextBoxFor(x => x.FromLastName, new { @class = "form-control", @placeholder = "Last Name", @title="Please provide your last name." })
             </div>
             <div class="form-group">
                 @Html.LabelFor(x => x.FromEmail, new { @class = "sr-only" })
-                @Html.TextBoxFor(x => x.FromEmail, new { @class = "form-control", @placeholder = "Email", @type="Email" })
+                @Html.TextBoxFor(x => x.FromEmail, new { @class = "form-control", @placeholder = "Email", @type="Email", @title="Please enter a valid email address." })
             </div>
             <div class="form-group">
                 @Html.LabelFor(x => x.Subject, new { @class = "sr-only" })
-                @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", @placeholder = "Subject" })
+                @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", @placeholder = "Subject", @title="Please enter a subject." })
             </div>
             <div class="form-group">
-                @Html.TextAreaFor(x => x.Message, new { @class = "form-control", @placeholder = "Message", @rows = "2" })
+                @Html.TextAreaFor(x => x.Message, new { @class = "form-control", @placeholder = "Message", @rows = "2", @title="Please enter a brief message" })
             </div>
+            @if (Model.Page == "Member") { 
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Age, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.Age, new { @class = "form-control", @placeholder = "Child's age", @title="Please enter the age of the child interested in ICSY." })
+                </div>
+            }
             <div class="form-group">
                 @Html.LabelFor(x => x.FormVerification, new { @class = "sr-only" })
-                @Html.TextBoxFor(x => x.FormVerification, new { @class = "form-control", @placeholder = "Enter any two-digit number" })
+                @Html.TextBoxFor(x => x.FormVerification, new { @class = "form-control", @placeholder = "Enter any two-digit number", @title = "Enter any two digit number to verify that you're a real human." })
             </div>
             <button type="submit" class="btn btn-submit">Submit</button>
         </form>
     </div>
-    <div class="col-md-6">
-        <img class="science-image img-responsive" src="/images/kid_science.jpg" alt="child working with science">
-    </div>
+    @if (Model.Page == "Contact") {
+        <div class="col-md-6">
+            <img class="science-image img-responsive" src="/images/kid_science.jpg" alt="child working with science">
+        </div>
+    }
+    else
+    {
+        <div class="col-md-6">
+            <img class="science-image img-responsive" src="/images/membership.jpg" alt="shoes and legs of children sitting on a bench">
+        </div>
+    }
 </div>

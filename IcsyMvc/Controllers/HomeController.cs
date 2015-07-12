@@ -25,6 +25,7 @@ namespace IcsyMvc.Controllers
         public ActionResult Contact()
         {
             ContactFormModel vm = new ContactFormModel();
+            vm.Page = "Contact";
             return View(vm);
         }
         [HttpPost]
@@ -62,7 +63,9 @@ namespace IcsyMvc.Controllers
 
         public ActionResult Member()
         {
-            return View();
+            ContactFormModel vm = new ContactFormModel();
+            vm.Page = "Member";
+            return View("Contact", vm);
         }
     }
 }

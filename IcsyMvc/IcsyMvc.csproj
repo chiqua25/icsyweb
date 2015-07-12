@@ -211,6 +211,7 @@
     <Content Include="images\juwujaren.jpg" />
     <Content Include="images\kid_science.jpg" />
     <Content Include="images\littlefivepointslogo.jpg" />
+    <Content Include="images\membership.jpg" />
     <Content Include="images\patrickfallonstockphoto.jpg" />
     <Content Include="images\pfallon.jpg" />
     <Content Include="Scripts\bootstrap.js" />
@@ -269,7 +270,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Partner.cshtml" />
-    <Content Include="Views\Home\Member.cshtml" />
     <Content Include="Views\Emails\Web.config" />
     <Content Include="Views\Emails\_ViewStart.cshtml" />
     <Content Include="Views\Emails\Contact.cshtml" />

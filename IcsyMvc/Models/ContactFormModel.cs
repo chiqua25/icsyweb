@@ -28,6 +28,6 @@ namespace IcsyMvc.Models
 
         //verification field
         [Required, Display(Name = "Enter two digit number with no space")]
-        public int FormVerification { get; set; }
+        public int? FormVerification { get; set; }
     }
 }
