@@ -342,14 +342,29 @@ hr {
     background-color:#d8d7d7;
     border-radius:0 !important;
     margin-bottom:10px;
-    padding: 10px 0 30px 0;
+    padding: 10px 0 0 0;
+    padding-left: 30px !important;
+    padding-right: 0 !important;
+    margin: 0 0 5px 0;
+}
+.jumbotron-contact {
+    background-color: #d8d7d7;
+    border-radius: 0 !important;
+    margin-bottom: 10px;
+    padding: 60px 0 60px 0;
+    padding-left: 30px !important;
+    padding-right: 0 !important;
+    margin: 0 0 5px 0;
+}
+.jumbotron-contact h1 {
+    margin: 0 !important;
 }
 .jumbotron h1 {
       display: block;
       text-decoration: none;
+      font-size: 36px;
       font-family: Helvetica, Arial, Sans-Serif;
-      /*letter-spacing: -5px;
-      color: #999;*/
+      margin: 0 0 30px 0;
       text-shadow: 0 1px 0 #ccc, 
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
@@ -371,6 +386,14 @@ hr {
     font-size: 22px;
     color: #000;
 }
+.member-text {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0 auto;
+    /*padding: 20px;*/
+    padding: 20px 0 0 0;
+    font-size: 16px;
+    color: #000;
+}
 .contact-row {
     background-color: #25a0c0;
     margin: 0;
@@ -384,6 +407,9 @@ hr {
 }
 .right-control {
     padding: 0 0 0 5px;
+}
+.membership-right-control {
+    padding-right: 0;
 }
 .form-control {
     color: #d3d3d3;
@@ -417,4 +443,104 @@ hr {
     margin-bottom: 15px;
     margin-right: 38px;
     text-transform: uppercase
+}
+.fa-ul {
+    padding-left: 0;
+    padding-top: 5px;
+    margin-left: 0.7em;
+    margin-bottom: 2px;
+    list-style-type: none;
+}
+.fa-li {
+    position: absolute;
+    left: -2.14285714em;
+    width: 2.14285714em;
+    top: 0.2em;
+    text-align: center;
+}
+.fa-ul > li {
+    position: relative;
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+}
+.fa-check-square {
+    color: #f48c43;
+}
+.panel-body {
+    padding: 0;
+}
+.panel {
+    margin-top:15px;
+    margin-right: 34px;
+}
+.left-panel {
+    padding: 21px;
+    margin-top: 0;
+    margin-right: 0;
+}
+.membership-includes {
+  display: inline;
+  float: left;
+  margin-left: 1%;
+  margin-right: 8%;
+  margin-top: 5px;
+}
+h3.membership-includes-heading {
+  background: #0c6d87;
+  color: #fff;
+  font-size: 0.9em;
+  letter-spacing: 0.02em;
+  font-family: 'Lato',sans-serif;
+  padding: 10px;
+  margin: 0;
+  text-transform: none;
+}
+.membership-includes-text {
+  border: 1px solid #dbe4eb;
+  background: #fff;
+  background: -moz-linear-gradient(top,#fff 0,#f8fafa 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#f8fafa));
+  background: -webkit-linear-gradient(top,#fff 0,#f8fafa 100%);
+  background: -o-linear-gradient(top,#fff 0,#f8fafa 100%);
+  background: -ms-linear-gradient(top,#fff 0,#f8fafa 100%);
+  background: linear-gradient(top,#fff 0,#f8fafa 100%);
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f8fafa');
+  padding: 10px 0 5px 10px;
+  margin: -10px 0 15px 0;
+}
+ul {
+  color: #202d39;
+  line-height: 1.5em;
+  font-size: 1.1em;
+  margin: 0 0 15px 0;
+  font-family: 'Lato',sans-serif;
+}
+.membership-reason h3 {
+    margin: -10px 0 0 0;
+    font-size: 0.9em;
+    text-transform: none;
+    border: 1px solid #dbe4eb;
+    background: #fff;
+    background: -moz-linear-gradient(top,#fff 0,#f8fafa 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#f8fafa));
+    background: -webkit-linear-gradient(top,#fff 0,#f8fafa 100%);
+    background: -o-linear-gradient(top,#fff 0,#f8fafa 100%);
+    background: -ms-linear-gradient(top,#fff 0,#f8fafa 100%);
+    background: linear-gradient(top,#fff 0,#f8fafa 100%);
+    zoom: 1;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f8fafa');
+    padding: 10px;
+    letter-spacing: 0.02em;
+    font-family: 'Lato',sans-serif;
+    color: #0c6d87;
+}
+.membership-reason p {
+    padding: 5px 20px 0 15px;
+    margin-top: 10px;
+    color: #07404f;
+    line-height: 1.4em;
+    font-size: 0.7em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

@@ -5,21 +5,44 @@
 }
 
 @if(Model.Page == "Contact") {
-    <div class="jumbotron">
-        <h1>Get In Touch!</h1>
-        <p class="jumbotron-text">Thanks for stopping by. We hope you have enjoyed your visit. We'd love to hear from you. Please complete the handy dandy form below, and we will get back to you as soon as possible.</p>
+    <div class="jumbotron jumbotron-contact">
+        <h1>Stay In Touch!</h1>
+        <p class="jumbotron-text">Thanks for stopping by. We hope you've enjoyed your visit. We'd love to hear from you. Please complete the handy dandy form below, and we will get back to you as soon as possible.</p>
     </div>
 }
 else
 {
     <div class="jumbotron">
-        <h1>The Value of ICSY Membership!</h1>
-        <p class="jumbotron-text">Your membership is an investment in a child's future, allowing them to develop in their knowledge of the scientific world around him or her. Join now by completing the handy form below, and we will contact you as soon as possible.</p>
+        <div class="row">
+            <div class="col-md-8"style="padding-top:15px; padding-right:5px;">
+                @*<h1 style="font-size: 36px;">The Value of an ICSY Membership!</h1>*@
+                <div class="membership-reason">
+                    <h3>Your membership is an investment in your child's future!</h3>
+                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
+                    <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it?</p>
+                </div>
+            </div>
+            <div class="col-md-4" style="padding-left:5px;">
+                <div class="membership-includes">
+                    <article>
+                        <h3 class="membership-includes-heading">Membership Includes:</h3>
+                        <img width="420" height="150" src="/images/membership-image.jpg" class="img-responsive" alt="boy in classroom with microscope">
+                        <div class="membership-includes-text">
+                            <ul class="fa-ul">
+                                <li><i class="fa-li fa fa-check-square"></i>Free access and transportation to high quality science programs, events, and equipment</li>
+                                <li><i class="fa-li fa fa-check-square"></i>Science-themed social events, where member families can meet and get to know each other</li>
+                                <li><i class="fa-li fa fa-check-square"></i>Mentorship from experienced science educators in various fields</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
     </div>
 }
 
 <div class="row contact-row">
-    <div class="col-md-6">
+    <div class="@(Model.Page == "Contact" ? "col-md-6" : "col-md-12")">
         @if (Model.Page == "Contact") {
             <div class="form-heading"><h2>Contact Us</h2></div>
         }
@@ -29,15 +52,15 @@ else
         }
         <form class="contact-form" action='@Url.Action("Contact", "Home")' method="post">
             @Html.ValidationSummary(false)
-            <div class="left-control form-group col-md-6">
+            <div class="left-control form-group @(Model.Page == "Contact" ? "col-md-6" : "col-md-4")">
                 @Html.LabelFor(x => x.FromFirstName, new { @class="sr-only" })
                 @Html.TextBoxFor(x => x.FromFirstName, new { @class="form-control", @placeholder="First Name", @title="Please provide your first name." })
             </div>
-            <div class="right-control form-group col-md-6">
+            <div class="center-control form-group @(Model.Page == "Contact" ? "right-control col-md-6" : "col-md-4")">
                 @Html.LabelFor(x => x.FromLastName, new { @class = "sr-only" })
                 @Html.TextBoxFor(x => x.FromLastName, new { @class = "form-control", @placeholder = "Last Name", @title="Please provide your last name." })
             </div>
-            <div class="form-group">
+            <div class="form-group @(Model.Page == "Contact" ? string.Empty : "right-control col-md-4")">
                 @Html.LabelFor(x => x.FromEmail, new { @class = "sr-only" })
                 @Html.TextBoxFor(x => x.FromEmail, new { @class = "form-control", @placeholder = "Email", @type="Email", @title="Please enter a valid email address." })
             </div>
@@ -49,12 +72,12 @@ else
                 @Html.TextAreaFor(x => x.Message, new { @class = "form-control", @placeholder = "Message", @rows = "2", @title="Please enter a brief message" })
             </div>
             @if (Model.Page == "Member") { 
-                <div class="form-group">
+                <div class="left-control form-group col-md-6">
                     @Html.LabelFor(x => x.Age, new { @class = "sr-only" })
                     @Html.TextBoxFor(x => x.Age, new { @class = "form-control", @placeholder = "Child's age", @title="Please enter the age of the child interested in ICSY." })
                 </div>
             }
-            <div class="form-group">
+            <div class="form-group @(Model.Page == "Contact" ? string.Empty : "right-control col-md-6")">
                 @Html.LabelFor(x => x.FormVerification, new { @class = "sr-only" })
                 @Html.TextBoxFor(x => x.FormVerification, new { @class = "form-control", @placeholder = "Enter any two-digit number", @title = "Enter any two digit number to verify that you're a real human." })
             </div>
@@ -64,12 +87,6 @@ else
     @if (Model.Page == "Contact") {
         <div class="col-md-6">
             <img class="science-image img-responsive" src="/images/kid_science.jpg" alt="child working with science">
-        </div>
-    }
-    else
-    {
-        <div class="col-md-6">
-            <img class="science-image img-responsive" src="/images/membership.jpg" alt="shoes and legs of children sitting on a bench">
         </div>
     }
 </div>
