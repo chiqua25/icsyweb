@@ -1,4 +1,5 @@
 ﻿@using IcsyMvc.Models;
+@using IcsyMvc.Helpers
 @model ContactFormModel
 @{ 
     ViewBag.Title = Model.Page;
@@ -14,27 +15,11 @@ else
 {
     <div class="jumbotron">
         <div class="row">
-            <div class="col-md-8"style="padding-top:15px; padding-right:5px;">
-                @*<h1 style="font-size: 36px;">The Value of an ICSY Membership!</h1>*@
+            <div class="col-md-12"style="padding-top:15px; padding-right:5px;">
                 <div class="membership-reason">
-                    <h3>Your membership is an investment in your child's future!</h3>
-                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
-                    <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it?</p>
-                </div>
-            </div>
-            <div class="col-md-4" style="padding-left:5px;">
-                <div class="membership-includes">
-                    <article>
-                        <h3 class="membership-includes-heading">Membership Includes:</h3>
-                        <img width="420" height="150" src="/images/membership-image.jpg" class="img-responsive" alt="boy in classroom with microscope">
-                        <div class="membership-includes-text">
-                            <ul class="fa-ul">
-                                <li><i class="fa-li fa fa-check-square"></i>Free access and transportation to high quality science programs, events, and equipment</li>
-                                <li><i class="fa-li fa fa-check-square"></i>Science-themed social events, where member families can meet and get to know each other</li>
-                                <li><i class="fa-li fa fa-check-square"></i>Mentorship from experienced science educators in various fields</li>
-                            </ul>
-                        </div>
-                    </article>
+                    <h1>Your membership is an investment in your child's future!</h1>
+                    <p>Solum audiam latine eu has, ornatus senserit ad qui. Ex vix enim mundi deterruisset. Putant commodo cu duo, in integre delectus eos. Cu etiam dicunt facilis nam. Sea stet homero interpretaris cu, an fuisset indoctum deseruisse vix, mea ut salutatus iracundia.</p>
+                    <p>No has iusto elitr. Iisque ocurreret intellegebat et ius, at ignota delenit inciderint vis. Mei ne aperiam invenire. Sumo sadipscing ad has, qui exerci fabellas in. Ea dicta impetus adversarium mea, eros solum vituperata id sea, sit consulatu persecuti expetendis ea.</p>
                 </div>
             </div>
         </div>
@@ -42,7 +27,7 @@ else
 }
 
 <div class="row contact-row">
-    <div class="@(Model.Page == "Contact" ? "col-md-6" : "col-md-12")">
+    <div class="@(Model.Page == "Contact" ? "col-md-6" : "col-md-9")">
         @if (Model.Page == "Contact") {
             <div class="form-heading"><h2>Contact Us</h2></div>
         }
@@ -64,10 +49,17 @@ else
                 @Html.LabelFor(x => x.FromEmail, new { @class = "sr-only" })
                 @Html.TextBoxFor(x => x.FromEmail, new { @class = "form-control", @placeholder = "Email", @type="Email", @title="Please enter a valid email address." })
             </div>
-            <div class="form-group">
+            <div class="form-group @(Model.Page == "Contact" ? string.Empty : "left-control col-md-6")">
                 @Html.LabelFor(x => x.Subject, new { @class = "sr-only" })
                 @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", @placeholder = "Subject", @title="Please enter a subject." })
             </div>
+            @if (Model.Page == "Member")
+            {
+                <div class="form-group right-control col-md-6">
+                    @Html.LabelFor(x => x.Program, new { @class = "sr-only" })
+                    @Html.EnumDropDownListForEx(x => x.Program, new { @class="form-control dropdown" })
+                </div>
+            }
             <div class="form-group">
                 @Html.TextAreaFor(x => x.Message, new { @class = "form-control", @placeholder = "Message", @rows = "2", @title="Please enter a brief message" })
             </div>
@@ -89,4 +81,33 @@ else
             <img class="science-image img-responsive" src="/images/kid_science.jpg" alt="child working with science">
         </div>
     }
+    else
+    {
+        <div class="col-md-3" style="padding-left:5px; padding-right:0;">
+            <article>
+                <div class="membership-includes-wrap">
+                    <div class="membership-includes-image">
+                        <img width="420" height="150" src="/images/membership-image.jpg" class="img-responsive" alt="boy in classroom with microscope">
+                    </div>
+                    <div class="membership-includes-content">
+                        <h2 class="membership-includes-title">
+                            What Your Child's Membership in ICSY Includes!
+                        </h2>
+                        <div class="membership-includes-text">
+                            <p style="border-bottom: 1px solid #ddedf2;">Free access and transportation to high quality science programs, events, and equipment</p>
+                            <p style="border-bottom: 1px solid #ddedf2;">Science-themed social events, where member families can meet and get to know each other</p>
+                            <p>Mentorship from experienced science educators in various fields</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    }
 </div>
+
+@section Scripts {
+    <script src="~/scripts/bootstrap-select.js"></script>
+    <script type="text/javascript">
+        $('.select-picker').selectpicker();
+    </script>
+}

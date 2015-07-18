@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 
 namespace IcsyMvc.Models
 {
     public enum ScienceActivityEnum
     {
+        [Description("Select a Program of Interest")]
         None = 0,
 
         [Description("Life Science")]
