@@ -204,8 +204,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\AACLOGO.jpg" />
     <Content Include="images\davidjacksonheadshot.jpg" />
     <Content Include="images\djackson.jpg" />
+    <Content Include="images\fernbanksciencecenter.jpg" />
     <Content Include="images\icsymain.jpg" />
     <Content Include="images\icsynewlogo.png" />
     <Content Include="images\icsy_background.jpg" />
@@ -213,7 +215,8 @@
     <Content Include="images\jaruneheadshot.jpg" />
     <Content Include="images\juwujaren.jpg" />
     <Content Include="images\kid_science.jpg" />
-    <Content Include="images\littlefivepointslogo.jpg" />
+    <Content Include="images\l5pcac_290.jpg" />
+    <Content Include="images\mandisa-thomas.jpg" />
     <Content Include="images\membership-image.jpg" />
     <Content Include="images\membership.jpg" />
     <Content Include="images\patrickfallonstockphoto.jpg" />
