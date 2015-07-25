@@ -2,7 +2,11 @@
 
 body {
 	font-family: 'Lato', sans-serif;color: #1b1b29;font-weight: 400; 
-    background-color: #575555; 
+      background: url(../images/galaxybackground.jpg) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
 }
 
 /* header */
@@ -134,6 +138,15 @@ div.description{
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
   color: #fff;
+  background-color: #095d73;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #095d73;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  color: #ffffff;
+  text-decoration: none;
   background-color: #095d73;
 }
 .navbar-right {
@@ -316,6 +329,10 @@ hr {
 	font-size: 1.1em;
 	font-weight: 400;
 	color: #565152;
+}
+.picture-investigate {
+  -webkit-filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
+  filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
 }
 
 /* footer */
