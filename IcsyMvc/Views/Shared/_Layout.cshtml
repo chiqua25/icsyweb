@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - ICSY</title>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -42,13 +43,13 @@
                     <li @Html.IsActive("Partner", "Home", "class=\"active\"")>@Html.ActionLink("Programs and Partnerships", "Partner", "Home")</li>
                     <li @Html.IsActive("Member", "Home", "class=\"active\"")>@Html.ActionLink("Membership", "Member", "Home")</li>
                     <li @Html.IsActive("Contact", "Home", "class=\"active\"")>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li class="dropdown">
+                    @*<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cool Science <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li @Html.IsActive("Solar", "Science", "class=\"active\"")>@Html.ActionLink("Solar System", "Solar", "Science")</li>
                             <li @Html.IsActive("Periodic", "Science", "class=\"active\"")>@Html.ActionLink("Periodic Table", "Solar", "Science")</li>
                         </ul>
-                    </li>
+                    </li>*@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="https://www.facebook.com/innercityscienceforyouth"><i class="fa fa-facebook-square"></i></a></li>

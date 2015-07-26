@@ -1,0 +1,86 @@
+﻿@using IcsyMvc.Models;
+@using IcsyMvc.Helpers
+@model ContactFormModel
+@{ 
+    ViewBag.Title = Model.Page;
+}
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12"style="padding-top:15px; padding-right:5px;">
+            <div class="membership-reason">
+                <h1>Your membership is an investment in your child's future!</h1>
+                <p>Solum audiam latine eu has, ornatus senserit ad qui. Ex vix enim mundi deterruisset. Putant commodo cu duo, in integre delectus eos. Cu etiam dicunt facilis nam. Sea stet homero interpretaris cu, an fuisset indoctum deseruisse vix, mea ut salutatus iracundia.</p>
+                <p>No has iusto elitr. Iisque ocurreret intellegebat et ius, at ignota delenit inciderint vis. Mei ne aperiam invenire. Sumo sadipscing ad has, qui exerci fabellas in. Ea dicta impetus adversarium mea, eros solum vituperata id sea, sit consulatu persecuti expetendis ea.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row contact-row">
+    <div class="col-md-9">
+        <div class="form-heading"><h2>Join Now!</h2></div>
+        <form class="contact-form" action='@Url.Action("Member", "Home")' method="post">
+            @Html.ValidationSummary(false)
+            <div class="left-control form-group col-md-4">
+                @Html.LabelFor(x => x.FromFirstName, new { @class="sr-only" })
+                @Html.TextBoxFor(x => x.FromFirstName, new { @class="form-control", @placeholder="First Name", @title="Please provide your first name." })
+            </div>
+            <div class="center-control form-group col-md-4">
+                @Html.LabelFor(x => x.FromLastName, new { @class = "sr-only" })
+                @Html.TextBoxFor(x => x.FromLastName, new { @class = "form-control", @placeholder = "Last Name", @title="Please provide your last name." })
+            </div>
+            <div class="form-group right-control col-md-4">
+                @Html.LabelFor(x => x.FromEmail, new { @class = "sr-only" })
+                @Html.TextBoxFor(x => x.FromEmail, new { @class = "form-control", @placeholder = "Email", @type="Email", @title="Please enter a valid email address." })
+            </div>
+            <div class="form-group left-control col-md-6">
+                @Html.LabelFor(x => x.Subject, new { @class = "sr-only" })
+                @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", @placeholder = "Subject", @title="Please enter a subject." })
+            </div>
+            <div class="form-group right-control col-md-6">
+                @Html.LabelFor(x => x.Program, new { @class = "sr-only" })
+                @Html.EnumDropDownListForEx(x => x.Program, new { @class="form-control dropdown" })
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group col-md-12" style="padding:0;">
+                @Html.TextAreaFor(x => x.Message, new { @class = "form-control", @placeholder = "Message", @rows = "2", @title="Please enter a brief message" })
+            </div>
+            <div class="left-control form-group col-md-6">
+                @Html.LabelFor(x => x.Age, new { @class = "sr-only" })
+                @Html.TextBoxFor(x => x.Age, new { @class = "form-control", @placeholder = "Child's age", @title="Please enter the age of the child interested in ICSY." })
+            </div>
+            <div class="form-group right-control col-md-6">
+                @Html.LabelFor(x => x.FormVerification, new { @class = "sr-only" })
+                @Html.TextBoxFor(x => x.FormVerification, new { @class = "form-control", @placeholder = "Enter any two-digit number", @title = "Enter any two digit number to verify that you're a real human." })
+            </div>
+            <button type="submit" class="btn btn-submit">Submit</button>
+        </form>
+    </div>
+    <div class="col-md-3" style="padding-left:5px; padding-right:0;">
+        <article>
+            <div class="membership-includes-wrap">
+                <div class="membership-includes-image">
+                    <img width="420" height="150" src="/images/membership-image.jpg" class="img-responsive" alt="boy in classroom with microscope">
+                </div>
+                <div class="membership-includes-content">
+                    <h2 class="membership-includes-title">
+                        What Your Child's Membership in ICSY Includes!
+                    </h2>
+                    <div class="membership-includes-text">
+                        <p style="border-bottom: 1px solid #ddedf2;">Free access and transportation to high quality science programs, events, and equipment</p>
+                        <p style="border-bottom: 1px solid #ddedf2;">Science-themed social events, where member families can meet and get to know each other</p>
+                        <p>Mentorship from experienced science educators in various fields</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/scripts/bootstrap-select.js"></script>
+    <script type="text/javascript">
+        $('.select-picker').selectpicker();
+    </script>
+}

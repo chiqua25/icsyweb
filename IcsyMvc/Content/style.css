@@ -120,8 +120,8 @@ div.description{
 
 /* navigation */
 .navbar{
-	margin: 1px 0 0 0;
-	border-radius: 4px 4px 0 0;
+	margin: 0;
+	border-radius: 0;
 }
 .navbar-brand {
 	font-size: 3.5em;
@@ -179,15 +179,23 @@ div.description{
 }
 .staff-heading {
       position: relative;
-      padding: 20px 0 10px;
+      padding: 10px 0 10px;
       color: rgb(97, 97, 97);
       background-color: rgb(186, 186, 186);
+}
+.partnership {
+      background: none;
+      font-size: 1.5em;
 }
 .staff-heading .page-title {
       font-size: 2.2em;
       margin: 0;
-      padding-left:20px;
+      padding-left:15px;
       font-weight: bold;
+}
+.partnership .page-title {
+    font-size: 1.4em;
+    padding-left: 10px;
 }
 .staff-image {
     height:233px;
@@ -214,7 +222,7 @@ hr {
 .bottom-about-row {
     margin-left: 0;
     margin-right: 0;
-    background-color: #25a0c0;
+    background-color: #c1d6db;
 }
 .staff-row {
     margin-left: 0;
@@ -222,9 +230,9 @@ hr {
     background-color:#d8d7d7;
 }
 .text-about {
-    font-size: 1.4em;
-    color: #fff;
-    padding-top: 15px;
+    font-size: 1em;
+    color: #0A0000;
+    padding-top: 5px;
 }
 .text-quote {
     color: #6e2e01;
@@ -369,6 +377,10 @@ hr {
 .jumbotron-contact h1 {
     margin: 0 !important;
 }
+jumbotron-partner {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .jumbotron h1 {
       display: block;
       text-decoration: none;
@@ -405,12 +417,11 @@ hr {
     color: #000;
 }
 .contact-row {
-    background-color: #25a0c0;
+    background-color: #c1d6db;
     margin: 0;
 }
 .form-heading {
-    color: #fff;
-    text-shadow: 0px 2px 3px #171717;
+    color: #000;
 }
 .left-control {
     padding: 0 5px 0 0;
@@ -463,7 +474,7 @@ hr {
     text-transform: uppercase
 }
 .fa-ul {
-    padding-left: 0;
+    padding-left: 5px;
     padding-top: 5px;
     margin-left: 0.7em;
     margin-bottom: 2px;
@@ -561,25 +572,53 @@ ul {
   margin: 0 0 15px 0;
   font-family: 'Lato',sans-serif; 
 }
-
+.partner {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+.partner-four {
+    border-bottom: none;
+}
+.people-image {
+  position: relative;
+  margin-top: 5px;
+}
+.people-image img {
+  border: 10px solid #0c6d87;
+  border-bottom: 45px solid #0c6d87;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+  padding: 5px;
+}
+.people-image p {
+  z-index: 1;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 16px/1 'Kaushan Script', cursive;
+  color: #fff;
+}
 .partner-title {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
   font-style: normal;
-  line-height: 1.5em;
+  line-height: 27px;
   letter-spacing: -0.5px;
   text-decoration: none;
   margin-top:0;
-  margin-bottom:0;
+  margin-bottom: 10px;
   text-transform: none;
-  color: #fff;
+  color: #095d73;
 }
 .partner-image {
   position: relative;
+  margin-bottom: 5px;
 }
 .partner-content {
-  background: #032a3a;
-  padding: 5px 15px;
+  background: #fff;
+  padding: 10px 15px;
   text-align: center;
 }
 .partner-text {
@@ -592,7 +631,50 @@ ul {
   margin: 0 0 15px 0;
   font-family: 'Lato',sans-serif; 
 }
-.last-partner {
-    margin-left: 20px;
-    margin-right: 20px;
+.become-partner-title {
+  font-weight: 600;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 27px;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  margin-top:0;
+  margin-bottom: 10px;
+  text-transform: none;
+  color: #095d73;
+}
+.become-partner-image {
+  position: relative;
+  margin-bottom: 5px;
+}
+.become-partner-content {
+  background: #fff;
+  padding: 10px 15px;
+  text-align: center;
+}
+.become-partner-text {
+  color: #878787;
+  text-align: center;
+  margin-top: 13px;
+  color: #07404f;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  margin: 0 0 15px 0;
+  font-family: 'Lato',sans-serif; 
+}
+.become-partner-call {
+  color: #fcfdfd;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  margin-left: -15px;
+  padding: 5px;
+  background-color: #080400;
+  opacity: 0.7;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  text-align: center;
+}
+.become-partner-button {
+    padding-bottom: 25px;
 }

@@ -15,7 +15,7 @@ namespace IcsyMvc.Models
         public string EmailTo { get; set; }
         public string Subject { get; set; }
         public string Message { get; set; }
-        public string ProgramInterest { get; set; }
+        public ScienceActivityEnum ProgramInterest { get; set; }
         public int Age { get; set; }
     }
 }

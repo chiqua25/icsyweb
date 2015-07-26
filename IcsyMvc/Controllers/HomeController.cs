@@ -66,7 +66,37 @@ namespace IcsyMvc.Controllers
         {
             ContactFormModel vm = new ContactFormModel();
             vm.Page = "Member";
-            return View("Contact", vm);
+            return View("Member", vm);
+        }
+        [HttpPost]
+        public ActionResult Member(ContactFormModel cfm)
+        {
+            try
+            {
+                if (this.ModelState.IsValid)
+                {
+                    ContactEmail email = new ContactEmail()
+                    {
+                        FirstName = cfm.FromFirstName,
+                        LastName = cfm.FromLastName,
+                        EmailFrom = cfm.FromEmail,
+                        EmailTo = ConfigurationManager.AppSettings["EmailTo"],
+                        SmtpFrom = ConfigurationManager.AppSettings["SmtpFrom"],
+                        Subject = cfm.Subject,
+                        Message = cfm.Message,
+                        ProgramInterest = cfm.Program,
+                        Age = cfm.Age.Value
+                    };
+                    email.Send();
+
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (RulesException ex)
+            {
+                this.ModelState.AddRuleErrors(ex);
+            }
+            return View(cfm);
         }
     }
 }
