@@ -12,17 +12,21 @@ namespace IcsyMvc.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("")]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Route("About")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
+
+        [Route("Contact")]
         public ActionResult Contact()
         {
             ContactFormModel vm = new ContactFormModel();
@@ -57,11 +61,14 @@ namespace IcsyMvc.Controllers
             }
             return View(cfm);
         }
+
+        [Route("Partner")]
         public ActionResult Partner()
         {
             return View();
         }
 
+        [Route("Member")]
         public ActionResult Member()
         {
             ContactFormModel vm = new ContactFormModel();
