@@ -489,9 +489,8 @@ jumbotron-partner {
 }
 .fa-ul > li {
     position: relative;
-    font-size: 12px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.4em;
+    font-size: 14px;
+    line-height: 1.6em;
 }
 .fa-check-square {
     color: #f48c43;
